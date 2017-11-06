@@ -47,11 +47,13 @@ f = ["1	A",
 
 for line in f:
  (key, value) = line.strip().split('\t')
- if key != lastkey:
-     (lastkey,val) =(key,value)
-     print(val + ' : ' + lastkey)
- elif lastkey ==key and value == 'A':
-     print(value)
+ if lastkey and lastkey != key and value == 'A':
+     if lastkey and val != value:
+         print(lastkey + '\t==============')
+ else:
+     (lastkey,val) = (key,value)
+     #print(val + ' : ' + lastkey)
+
 
 
 
